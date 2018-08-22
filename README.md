@@ -1,2 +1,4 @@
-go-bindata -o asset.go asset
-go build -o ticktock
+- go-bindata -o asset.go asset/...
+- go build -o ticktock
+- go build -o ticktock.app/Contents/MacOS/ticktock
+- open ticktock.app

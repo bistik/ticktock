@@ -4,21 +4,23 @@ import (
 	"fmt"
 	"github.com/zserge/webview"
 	// "html/template"
-	"net/url"
+	//	"net/url"
 )
 
 func main() {
 	Test()
 	w := webview.New(webview.Settings{
-		Title: "ticktock: ",
-		URL:   `data:text/html,` + url.PathEscape(string(MustAsset("asset/index.html"))),
+		Width:  400,
+		Height: 200,
+		Title:  "ticktock",
 	})
 	defer w.Exit()
 
 	css := string(MustAsset("asset/styles.css"))
 	fmt.Println(css)
 	w.Dispatch(func() {
-		//w.InjectCSS(css)
+		w.InjectCSS(css)
+		loadVue(w)
 		/*
 			w.Eval(fmt.Sprintf(`(function(css){
 					var style = document.createElement('style')

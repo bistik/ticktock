@@ -2,9 +2,9 @@ body {
     background: #3e3e3e;
 }
 * {
-    font-family: sans-serif;
+    font-family: monospace;
 }
-
 h2 {
     color: #aeaeae;
 }
+
